@@ -8,10 +8,11 @@ class Member {
   });
 
   factory Member.fromJson(Map<String, dynamic> json) {
-    String name = json['member']['name'];
-    String thumbLink =
+    String defaultImage =
         'https://www.codemate.com/wp-content/uploads/2016/02/flutter-logo-round.png';
-    String highresLink = thumbLink;
+    String name = json['member']['name'];
+    String thumbLink = defaultImage;
+    String highresLink = defaultImage;
 
     if (json['member']['photo'] != null) {
       thumbLink = json['member']['photo']['thumb_link'];
